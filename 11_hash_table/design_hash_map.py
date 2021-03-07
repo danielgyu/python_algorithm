@@ -54,4 +54,3 @@ class MyHashMap:
                 prev.next = p.next
                 return
             prev, p = p, p.next
-
