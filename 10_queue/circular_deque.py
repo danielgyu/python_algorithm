@@ -44,7 +44,7 @@ class MyCircularDeque:
         if self.len == 0:
             return False
         self.len -= 1
-        self._del(self.head)
+        self._delete(self.head)
         return True
         
 
@@ -52,7 +52,7 @@ class MyCircularDeque:
         if self.len == 0:
             return False
         self.len -= 1
-        self._del(self.tail.left.left)
+        self._delete(self.tail.left.left)
         return True
         
 
