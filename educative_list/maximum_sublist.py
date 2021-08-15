@@ -1,18 +1,12 @@
-from collections import deque
-
 def get_maximum_sublist(lst: list) -> int:
     max_sum = lst[0]
-    buf = deque()
+    current_sum = max_sum
 
     for i in range(1, len(lst)):
-        if not buf:
-            current_max = max(lst[i], lst[i-1] + lst[i])
-        else:
-            buf.append(lst[i])
-            current_max = max(lst[i], buf)
+        current_sum = max(lst[i], current_sum + lst[i])
+        max_sum = max(max_sum, current_sum)
 
-        if current_max > max_sum:
-            max_sum = current_max
+    return max_sum
 
 
 if __name__ == "__main__":
