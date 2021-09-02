@@ -1,6 +1,3 @@
-from collections import deque
-
-
 def get_target_index(arr: list) -> int:
     i = 0
     while i < len(arr) - 1:
