@@ -26,15 +26,16 @@ def solution_length(word: str, n: int) -> int:
     word_dict = {}
 
     for window_end in range(len(word)):
-        print(f"word_dict: {word_dict}")
         if word[window_end] not in word_dict:
             word_dict[word[window_end]] = 0
+        word_dict[word[window_end]] += 1
 
-        if sum(word_dict.values()) > n:
+        while len(word_dict) > n:
             word_dict[word[window_start]] -= 1
+            if word_dict[word[window_start]] == 0:
+                del word_dict[word[window_start]]
             window_start += 1
 
-        word_dict[word[window_end]] += 1
         max_length = max(max_length, window_end - window_start + 1)
 
     return max_length
