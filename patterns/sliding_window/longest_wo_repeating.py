@@ -15,16 +15,26 @@ def solution(s: str) -> int:
             cur_length += 1
             
         else:
-            count_dict[window_end] = 1
-            window_start += 1
             max_length = max(max_length, cur_length)
-            cur_length = 1
+            while s[window_start] != window_end:
+                count_dict[s[window_start]] = 0
+                window_start += 1
+                cur_length -= 1
+            window_start += 1
+            count_dict[window_end] = 1
 
-    return max_length if max_length else cur_length
+    return max(max_length, cur_length)
 
 
 if __name__ == "__main__":
-    print(solution("abcabcbb"))
-    print(solution("bbbbb"))
-    print(solution("pwwkew"))
-    print(solution(""))
+    """
+    """
+    assert solution("abcabcbb") == 3
+    assert solution("bbbb") == 1
+    assert solution("pwwkew") == 3
+    assert solution("aab") == 2
+    assert solution("") == 0
+    assert solution("dvdf") == 3
+    assert solution("cdd") == 2
+    assert solution("tmmzuxt") == 5
+    assert solution("aabaab!bb") == 3
