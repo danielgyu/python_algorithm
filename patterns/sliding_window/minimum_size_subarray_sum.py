@@ -1,4 +1,4 @@
-https://leetcode.com/problems/minimum-size-subarray-sum/solution/
+#https://leetcode.com/problems/minimum-size-subarray-sum/solution/
 
 import math
 
