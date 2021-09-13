@@ -22,8 +22,6 @@ def solution(fruits: list) -> int:
 
             window_start +=1
 
-
-
     return max_length
 
 
