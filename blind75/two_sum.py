@@ -10,4 +10,6 @@ def two_sum(nums: list, target: int) -> list:
             if nums[i] + nums[j] == target:
                 return [i, j]                
 
+    return []
+
 print(two_sum([3,2,4], 6))
