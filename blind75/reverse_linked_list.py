@@ -31,3 +31,4 @@ if __name__ == "__main__":
     c.next = d
 
     rl = reverse_list(a)
+    breakpoint()
